@@ -1,8 +1,8 @@
-# Steve Site Template
+# Our Couple's Site
 
-This is a template repo for how I like to build websites.
+The couple's site of Eugenia and Stephen
 
-It uses
+**Built with:**
 * Eleventy – static site generator
 * TailwindCSS – utility-first css framework
 * AlpineJS – framework for writing JS in HTML (like Vue)
