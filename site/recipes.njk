@@ -1,0 +1,74 @@
+---
+layout: interior
+title: Recipes
+eleventyNavigation:
+	key: recipes
+	parent: home
+---
+
+<main>
+	{% for recipe in collections.recipe | sort(true, false, 'recipe.title') %}
+	{% if recipe.data.title %}
+	
+	<a
+		x-data="{ imgVisible: false }"
+		@mousemove="hoverFunction()"
+		@mouseenter="imgVisible = true"
+		@mouseleave="imgVisible = false"
+		class="relative block pt-10 pb-6 space-y-3 text-5xl font-light text-black border-b-2 border-black border-opacity-75"
+		href="{{ recipe.url }}"
+	>
+		<ul
+			class="flex flex-wrap -mx-1 -my-1 text-lg font-normal text-black text-opacity-75"
+		>
+			{% for term in recipe.data.searchterms | sort %}
+			<li>
+			<span class="mx-1 my-1">{{ term }}</span>
+			{% if loop.index < loop.length %}
+			<span class="mx-1 my-1 text-black text-opacity-50">•</span>
+			{% endif %}
+			</li>
+			{% endfor %}
+		</ul>
+		<div class="flex items-center justify-between">
+			<h2 class="leading-tight">{{ recipe.data.title }}</h2>
+
+				
+			<div class="flex-shrink-0 w-8 text-black">
+			{% include "icons/right-arrow.svg" %}
+			</div>
+		</div>
+
+		<div
+			style="
+				transform: translate(
+					calc(var(--mouseX) + 1rem),
+					calc(var(--mouseY) - 50%)
+				);
+			"
+			x-show="imgVisible === true"
+			class="fixed top-0 left-0 z-10 h-56 p-3 origin-center bg-white border-2 border-black border-opacity-75 w-72"
+		>
+			<img
+				class="object-cover w-full h-full"
+				src="/./images/recipes/{{ recipe.data.eleventyNavigation.key }}.jpg"
+				alt=""
+			/>
+		</div>
+	</a>
+	{% endif %}
+	{% endfor %}
+</main>
+
+<script>
+	let update
+	const hoverFunction = function () {
+		document.addEventListener("mousemove", function (event) {
+			cancelAnimationFrame(update)
+			update = requestAnimationFrame(function () {
+				$htmlTag.style.setProperty("--mouseX", `${event.clientX}px`);
+				$htmlTag.style.setProperty("--mouseY", `${event.clientY}px`);
+		})	  
+		});
+	};
+</script>

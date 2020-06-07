@@ -1,0 +1,26 @@
+.recipe-markdown {
+	& ol {
+		@apply list-decimal pl-8;
+	}
+
+	& li {
+		@apply py-4 pl-2;
+
+		&:first-child {
+			@apply pt-0;
+		}
+
+		&:last-child {
+			@apply pb-0;
+		}
+
+		& strong {
+			@apply inline-block px-1 font-normal leading-none bg-white border-2 py-half;
+		}
+	}
+}
+
+.recipe-info-grid {
+	grid-template-columns: minmax(18rem, 5fr) 9fr;
+	gap: max(2rem, 8vw);
+}

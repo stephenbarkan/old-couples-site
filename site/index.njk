@@ -2,3 +2,19 @@
 layout: default
 title: Home
 ---
+
+{% from "components/_home-nav-link.njk" import navLink %}
+
+<main class="container flex flex-col items-center justify-center flex-1 space-y-12">
+  <h1 class="leading-none tracking-tight text-center text-7xl">{{site.name}}</h1>
+
+
+  <nav class="flex items-center justify-between space-x-8 text-5xl font-light">
+
+    {{ navLink( 'Story', '/', 'bg-pink', 'bg-teal', 'rounded-full') }}
+    {{ navLink( 'Recipes', '/recipes', 'bg-yellow', 'bg-salmon', 'rounded-none') }}
+    {{ navLink( 'Vlog', '/', 'bg-blue', 'bg-green', 'rounded-xl') }}
+
+
+  </nav>
+</main>

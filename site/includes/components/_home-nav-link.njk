@@ -1,0 +1,16 @@
+    {% macro navLink(name="stephen", href="/", color1="bg-white", color2="bg-white", rounded="rounded-none") %}
+
+    <div>
+      <a href="{{href}}" class="block space-x-4 {{rounded}} group">
+        <span
+              class="inline-block px-8 py-4 leading-none border-2 {{rounded}} group-hover:underline {{color1}} border-opacity-75 border-black">
+          Our
+        </span>
+        <span
+              class="inline-block px-8 py-4 leading-none border-2 {{rounded}} group-hover:underline {{color2}} border-opacity-75 border-black">
+          {{name}}!
+        </span>
+      </a>
+    </div>
+
+    {% endmacro %}

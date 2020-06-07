@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<div x-cloak
+	class="fixed top-0 w-screen bg-beige"
+	:class="{'z-10' : !atTop}"
+	style="background-image: url(/./images/noise.png);"
+	x-data="{ atTop: true }"
+	@scroll.window="atTop = (window.pageYOffset > 100) ? false : true">
+
+	<nav
+		class="container flex items-start justify-between transition-all duration-150 ease-out border-b-2 border-black border-opacity-0"
+		:class="{'py-4 border-b-2 border-opacity-75' : !atTop, 'py-8': atTop}"
+		style="will-change: padding;"
+>
+	
+	{% if eleventyNavigation and eleventyNavigation.key and eleventyNavigation.parent %}
+	
+		<a class="flex items-center space-x-2 underline hover:opacity-75" href="{{page.filePathStem | replace(page.fileSlug, "")}}">
+		<div class="flex-shrink-0 w-5">
+		{% include "icons/left-arrow.svg" %}
+		</div>
+		<span>{{eleventyNavigation.parent | capitalize}}</span>
+		</a>
+		{% else %}
+		<h1
+		class="transition-all duration-150 ease-out"
+		:class="{'text-3xl' : !atTop, 'text-6xl': atTop}"
+		style="will-change: font-size;">
+	 Our {{title}}
+	</h1>
+	{% endif %}
+	<a class="ml-auto underline hover:opacity-75" href="/">Home</a>
+	</nav>
+</div>
+
+<div class="container py-24 mt-24 space-y-20">
+	{{ content | safe }}
+</div>
