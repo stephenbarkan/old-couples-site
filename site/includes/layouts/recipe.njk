@@ -55,12 +55,15 @@ layout: interior
 				>
 					<span class="relative flex items-center flex-shrink-0 w-6">
 						<span
-							class="w-full h-6 border-2 border-black border-opacity-75 rounded-full"
+							class="w-full h-6 flex justify-center items-center border-2 border-black border-opacity-75 rounded-full"
 							:class="{ 'bg-salmon' : isChecked === true, 'bg-yellow' : isChecked === false }"
-							>&#8203; </span
-						>​
-					</span>
-					<span :class="{ 'line-through opacity-50' : isChecked === true}">{{
+							>
+							<span
+							class=" rounded-full w-2 h-2"
+							:class="{ 'bg-black' : isChecked === true}"
+							></span>
+							</span>&#8203;</span>
+					<span :class="{ 'opacity-50' : isChecked === true}">{{
 						item
 					}}</span>
 				</li>

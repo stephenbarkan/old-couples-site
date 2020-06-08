@@ -25,10 +25,17 @@ layout: default
 		</a>
 		{% else %}
 		<h1
-		class="transition-all duration-150 ease-out"
-		:class="{'text-3xl' : !atTop, 'text-6xl': atTop}"
-		style="will-change: font-size;">
-	 Our {{title}}
+		class="font-light">
+	 <span
+	 	class="inline-block leading-none transition-all duration-150 ease-out border-2 border-black border-opacity-75 bg-yellow"
+		:class="{'text-3xl px-4 py-2' : !atTop, 'text-5xl px-8 py-4': atTop}"
+		style="will-change: font-size padding;"
+	 >Our</span>
+	 <span
+	 	class="inline-block leading-none transition-all duration-150 ease-out border-2 border-black border-opacity-75 bg-salmon"
+		:class="{'text-3xl px-4 py-2' : !atTop, 'text-5xl px-8 py-4': atTop}"
+		style="will-change: font-size padding;"
+	 >{{title}}!</span>
 	</h1>
 	{% endif %}
 	<a class="ml-auto underline hover:opacity-75" href="/">Home</a>

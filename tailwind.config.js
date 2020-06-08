@@ -38,7 +38,21 @@ module.exports = {
       spacing: {
         'half': '.125rem',
         '3/5': '60%',
-        '72' : '18rem'
+        '72' : '18rem',
+      },
+      rotate: {
+        '25': '25deg',
+        '-25': '-25deg',
+        '22': '22deg',
+        '-22': '-22deg',
+        '15': '15deg',
+        '-15': '-15deg',
+        '12': '12deg',
+        '-12': '-12deg',
+        '5': '5deg',
+        '-5': '-5deg',
+        '2': '2deg',
+        '-2': '-2deg',
       }
     },
 
@@ -46,6 +60,7 @@ module.exports = {
   variants: {
     textDecoration: ['hover', 'focus', 'group-hover'],
     padding: ['first', 'last', 'responsive'],
+    rotate: ['hover', 'group-hover']
   },
   plugins: [],
 }

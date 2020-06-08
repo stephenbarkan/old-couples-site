@@ -5,15 +5,23 @@ title: Home
 
 {% from "components/_home-nav-link.njk" import navLink %}
 
-<main class="container flex flex-col items-center justify-center flex-1 space-y-12">
-  <h1 class="leading-none tracking-tight text-center text-7xl">{{site.name}}</h1>
+<main class="container flex flex-col items-center justify-center flex-1 space-y-32">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1169 121">
+  <path id="curve" fill="transparent" d="M1 104s149.399-16 291.75-16 291.75 16 291.75 16 167.878 16 291.75 16c123.87 0 291.75-16 291.75-16"/>
+  <text width="1169">
+    <textPath alignment-baseline="top" startOffset="50%" text-anchor="middle" xlink:href="#curve" class="leading-none tracking-tight text-center text-7xl">
+      {{site.name}}
+    </textPath>
+  </text>
+</svg>
 
 
-  <nav class="flex items-center justify-between space-x-8 text-5xl font-light">
+  <nav class="flex items-center justify-between py-4 space-x-32 text-5xl font-light">
 
-    {{ navLink( 'Story', '/', 'bg-pink', 'bg-teal', 'rounded-full') }}
-    {{ navLink( 'Recipes', '/recipes', 'bg-yellow', 'bg-salmon', 'rounded-none') }}
-    {{ navLink( 'Vlog', '/', 'bg-blue', 'bg-green', 'rounded-xl') }}
+    {{ navLink( 'Story', '/', 'bg-pink', 'bg-teal', 'rounded-full', '-rotate-15 group-hover:-rotate-12', 'rotate-5 group-hover:rotate-2 ml-16 mt-4') }}
+    {{ navLink( 'Recipes', '/recipes', 'bg-yellow', 'bg-salmon', 'rounded-none', 'rotate-15 group-hover:rotate-12 mt-4', '-rotate-5 group-hover:-rotate-2 ml-10 mt-6') }}
+    {{ navLink( 'Vlog', '/', 'bg-blue', 'bg-green', 'rounded-xl', '-rotate-5 group-hover:-rotate-2 -mt-4', '-rotate-25 group-hover:-rotate-22 ml-20 mt-1') }}
 
 
   </nav>
